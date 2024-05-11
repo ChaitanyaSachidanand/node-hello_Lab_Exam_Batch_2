@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment005
+  labels:
+    app: node-app005
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-app005
+  template:
+    metadata:
+      labels:
+        app: node-app005 
+    spec:
+      containers:
+      - name: node-app005
+        image: chaidocker321/node_hello_005:latest 
+        ports:
+        - containerPort: 8080
